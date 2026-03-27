@@ -80,6 +80,8 @@ def grade_aware_dequantize(state: dict[str, torch.Tensor], use_residual: bool = 
 
 @dataclass
 class PackedKVState:
+    """Packed layout; bump ``rotorquant.schema.ROTORQUANT_PACKED_SCHEMA_VERSION`` on breaking changes."""
+
     payload_bits: int
     residual_bits: int
     payload_packed: torch.Tensor

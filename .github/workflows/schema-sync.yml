@@ -1,0 +1,27 @@
+name: Packed schema
+
+on:
+  push:
+    paths:
+      - 'src/rotorquant/schema.py'
+      - 'src/rotorquant/quantize.py'
+  pull_request:
+    paths:
+      - 'src/rotorquant/schema.py'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pytest
+        working-directory: ${{ github.workspace }}
+      - run: pytest -q tests/test_schema.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
