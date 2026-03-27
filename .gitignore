@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Jupyter / local artifacts
+.ipynb_checkpoints/
+*.log
+*.tmp
+
+# Bench outputs and local run artifacts
+bench/*.json
+bench/*.csv
+bench/*.parquet
+bench/*.npz
+bench/*.npy
+
+# Secrets and local env
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.secrets
+secrets/
+credentials/
